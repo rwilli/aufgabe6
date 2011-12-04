@@ -1,9 +1,9 @@
 
-public class Fabric {
+public class Fabrik {
 	private final String name;
 	private List<Robot> lstRobots;
 	
-	public Fabric(String name) {
+	public Fabrik(String name) {
 		this.name = name;
 	}
 	
@@ -16,11 +16,15 @@ public class Fabric {
 	}
 	
 	public void deleteRobot(int nr) {
-		
+		//this.lstRobots.
 	}
 	
 	public Robot getRobot(int nr) {
 		return null;
+	}
+	
+	public void changeRobotType() {
+		
 	}
 	
 	public void calculateAverageOperationHoursOfAllandTypes() {

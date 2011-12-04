@@ -10,8 +10,8 @@ public class SwivelArmRobot extends Robot {
 		return this.rotations;
 	}
 	
-	public void setRotations(int rot) {
-		this.rotations = rot;
+	public void increaseRotations() {
+		this.rotations++;
 	}
 	
 }

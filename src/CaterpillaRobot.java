@@ -10,8 +10,8 @@ public class CaterpillaRobot extends Robot {
 		return this.distance;
 	}
 	
-	public void setDistance(float dist) {
-		this.distance = dist;
+	public void increaseDistance() {
+		this.distance++;
 	}
 	
 }

@@ -12,8 +12,8 @@ public abstract class Robot {
 		return this.operatingHours;
 	}
 	
-	public void setOperatingHours(int hours) {
-		this.operatingHours = hours;
+	public void increaseOperatingHours() {
+		this.operatingHours++;
 	}
 	
 	public void changeType(Usage u) {
