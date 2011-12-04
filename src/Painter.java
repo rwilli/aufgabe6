@@ -5,4 +5,8 @@ public class Painter extends Usage {
 	public Painter(float v) {
 		this.paintVolume = v;
 	}
+	
+	public float getPaintVolume() {
+		return this.paintVolume;
+	}
 }

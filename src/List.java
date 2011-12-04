@@ -77,7 +77,7 @@ public class List<T> {
 	 * @author Gruppe222
 	 * 
 	 */
-	/*protected class ListIter implements Iter<T> {
+	protected class ListIter implements Iter<T> {
 		protected ListNode n = head.next;
 
 		@Override
@@ -112,7 +112,7 @@ public class List<T> {
 			return n.previous != null;
 		}
 
-	}*/
+	}
 
 	/**
 	 * returns the current size of the list

@@ -6,4 +6,8 @@ public class Welder extends Usage {
 		this.temperature = t;
 	}
 	
+	public int getTemperature() {
+		return this.temperature;
+	}
+	
 }
