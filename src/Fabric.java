@@ -18,5 +18,9 @@ public class Fabric {
 	public Robot getRobot(int nr) {
 		return null;
 	}
+	
+	public void calculateAverageOperationHoursOfAllandTypes() {
+		
+	}
 
 }

@@ -16,6 +16,7 @@ public abstract class Robot {
 		this.operatingHours = hours;
 	}
 	
-	//TODO
-	//public void changeType(RobotType tp)
+	public void changeType(Usage u) {
+		this.use = u;
+	}
 }
