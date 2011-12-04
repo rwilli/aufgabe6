@@ -1,1 +1,195 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram></umlet_diagram>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>273</x>
+      <y>392</y>
+      <w>147</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Roboter
+
+--
+-number: final int
+-operatingHours: int
+-usage: Usage
+--
++getOperatingHours(): int
++setOperatingHours(int hours)
++changeTyp(RoboterTyp typ)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>364</x>
+      <y>546</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>SwivelArmRoboter
+--
+-rotations: int
+--
++getRotations(): int
++setRotations()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>182</x>
+      <y>546</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>CaterpillarRoboter
+--
+-distance: float
+--
++getDistance(): flaot
++setDistance(float d)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>511</x>
+      <y>462</y>
+      <w>147</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>
+Welder
+--
+-temprature: int
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>273</x>
+      <y>483</y>
+      <w>41</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>28;21;21;63</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>350</x>
+      <y>483</y>
+      <w>76</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>21;21;63;63</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>700</x>
+      <y>462</y>
+      <w>147</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Painter
+--
+-paintVolume: float
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>616</x>
+      <y>364</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Usage
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>399</x>
+      <y>357</y>
+      <w>230</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>21;49;217;21</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>700</x>
+      <y>392</y>
+      <w>90</w>
+      <h>83</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>21;21;77;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>588</x>
+      <y>392</y>
+      <w>83</w>
+      <h>83</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70;21;21;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>105</x>
+      <y>112</y>
+      <w>315</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>Fabric
+--
+-name: final String
+-roboters: List
+--
++addRoboter(Roboter r)
++deleteRoboter(int number)
++getRoboter(int number): Roboter
++calculateAverageOperationHoursOfAllAndTyp()
++calculateAverageOperationHoursOfTyp()
++calculateAverageRotationsOfSwivelsAndOfAllUsages()
++calculateAverageMinAndMaxTempOfAllWelderAndOfAllTyps()
++calculateAverageDistanceOfAllCaterpillarandUsage()
++calculateAverageDistanceOfAllCaterpillaerAndTyps()
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>294</x>
+      <y>273</y>
+      <w>48</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>21;21;35;119</additional_attributes>
+  </element>
+</diagram>
