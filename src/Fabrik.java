@@ -1,7 +1,7 @@
 
 public class Fabrik {
 	private final String name;
-	private List<Robot> lstRobots;
+	private List<Robot> lstRobots = new List<Robot>();
 	
 	public Fabrik(String name) {
 		this.name = name;
@@ -15,8 +15,8 @@ public class Fabrik {
 		this.lstRobots.add(r);
 	}
 	
-	public void deleteRobot(int nr) {
-		//this.lstRobots.
+	public void deleteRobot(Robot r) {
+		this.lstRobots.remove(r);
 	}
 	
 	public Robot getRobot(int nr) {
