@@ -6,7 +6,7 @@
  */
 public class List<T> {
 	private ListNode head = null;
-	private ListNode tail = null;
+	//private ListNode tail = null;
 	private int size;
 
 	/**
@@ -18,16 +18,23 @@ public class List<T> {
 	public void add(T element) {
 		if (head == null) {
 			head = new ListNode(element);
-			tail = new ListNode(element);
-			head.next = tail;
-			tail.previous = head;
+			//tail = new ListNode(element);
+			//head.next = tail;
 		} else {
 			ListNode tmp = new ListNode(element);
 			ListNode last = getLast();
 			last.next = tmp;
-			tmp.previous = last;
 		}
 		size++;
+	}
+	
+	public void remove(T element) {
+		Iter<T> iter = iter();
+		
+		while (iter.hasNext()) {
+			if (iter.next().equals(element))
+				System.out.println(iter.next().toString());
+		}
 	}
 
 	/**
@@ -49,9 +56,9 @@ public class List<T> {
 	 * 
 	 * @return Iter<T> an iterator.
 	 */
-	//public Iter<T> iter() {
-	//	return new ListIter();
-	//}
+	public Iter<T> iter() {
+		return new ListIter();
+	}
 
 	/**
 	 * Inner Class ListNode, represents a node in the list.
@@ -62,7 +69,7 @@ public class List<T> {
 	protected class ListNode {
 		private T data;
 		private ListNode next = null;
-		private ListNode previous = null;
+		//private ListNode previous = null;
 
 		ListNode(T data) {
 			this.data = data;
@@ -78,7 +85,7 @@ public class List<T> {
 	 * 
 	 */
 	protected class ListIter implements Iter<T> {
-		protected ListNode n = head.next;
+		protected ListNode n = head;
 
 		@Override
 		public T next() {
@@ -91,7 +98,7 @@ public class List<T> {
 			return data;
 		}
 
-		@Override
+		/*@Override
 		public T previous() {
 			if (n == null)
 				return null;
@@ -100,17 +107,17 @@ public class List<T> {
 			T data = n.data;
 
 			return data;
-		}
+		}*/
 
 		@Override
 		public boolean hasNext() {
 			return n != null;
 		}
 
-		@Override
+		/*@Override
 		public boolean hasPrevious() {
 			return n.previous != null;
-		}
+		}*/
 
 	}
 
@@ -122,5 +129,4 @@ public class List<T> {
 	public int size() {
 		return this.size;
 	}
-	
 }
