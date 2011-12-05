@@ -7,6 +7,11 @@ public abstract class Robot {
 	protected Robot(int nr) {
 		this.number = nr;
 	}
+	
+	protected Robot(int nr, int hour) {
+		this.number = nr;
+		this.operatingHours = hour;
+	}
 
 	public int getOperatingHours() {
 		return this.operatingHours;

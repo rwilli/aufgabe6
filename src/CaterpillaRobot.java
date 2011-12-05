@@ -6,6 +6,10 @@ public class CaterpillaRobot extends Robot {
 		super(nr);
 	}
 	
+	public CaterpillaRobot(int nr, int hour) {
+		super(nr, hour);
+	}
+	
 	public float getDistance() {
 		return this.distance;
 	}
