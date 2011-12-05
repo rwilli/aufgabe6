@@ -1,11 +1,13 @@
 
+
 public class Test {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		List<Fabrik> lstFabrics = new List<Fabrik>();
+		Map mapFabrics = new Map();
+	/*
 		Fabrik tmp = new Fabrik("Steel");
 		Robot rb = new CaterpillaRobot(1, 4);
 		rb.use = new Welder(100);
@@ -25,12 +27,31 @@ public class Test {
 		tmp.calculateAverageRotationsOfSwivelsAndOfAllUsages();
 		tmp.calculateAverageMinAndMaxTempOfAllWelderAndOfAllTypes();
 		tmp.calculateAverageDistanceOfAllCaterpillarAndUsage();
+	*/	
 		
-		lstFabrics.add(new Fabrik("1"));
-		lstFabrics.add(new Fabrik("2"));
-		lstFabrics.add(new Fabrik("3"));
-		lstFabrics.add(new Fabrik("4"));
-		lstFabrics.remove(new Fabrik("3"));
+		mapFabrics.add("1",new Fabrik("1"));
+		mapFabrics.add("2",new Fabrik("2"));
+		mapFabrics.add("3",new Fabrik("3"));
+		mapFabrics.add("4", new Fabrik("4"));
+		
+		
+		mapFabrics.printMap();
+		
+		mapFabrics.remove("3");
+
+		mapFabrics.printMap();
+
+		
+		//lstFabrics.remove(new Fabrik("3"));
+		
+	//	Iter iter = MapFabrics.iter();
+		
+//		while(iter.hasNext()){
+//			
+//			System.out.println(iter.next());
+//		}
+//		
+		
 		/*Robot rob = new CaterpillaRobot(1);
 		rob.changeType(new Painter(4));
 		tmp.addRobot(new CaterpillaRobot(1));

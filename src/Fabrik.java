@@ -1,8 +1,29 @@
 
 public class Fabrik {
+	@Override
+	public String toString() {
+		return "Fabrikname: "+name;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fabrik other = (Fabrik) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
 	private final String name;
-	private List<Robot> lstRobots = new List<Robot>();
-	
+	private Map lstRobots = new Map();
 	public Fabrik(String name) {
 		this.name = name;
 	}
@@ -12,11 +33,11 @@ public class Fabrik {
 	}
 	
 	public void addRobot(Robot r) {
-		this.lstRobots.add(r);
+		//this.lstRobots.add(r);
 	}
 	
 	public void deleteRobot(Robot r) {
-		this.lstRobots.remove(r);
+		//this.lstRobots.remove(r);
 	}
 	
 	public Robot getRobot(int nr) {
