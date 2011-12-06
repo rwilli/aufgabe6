@@ -25,7 +25,7 @@ public abstract class Robot {
 		this.use = u;
 	}
 	public int getId(){
-		return number;
+		return number;		
 	}
 
 	/* (non-Javadoc)
