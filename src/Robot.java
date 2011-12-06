@@ -24,6 +24,9 @@ public abstract class Robot {
 	public void changeType(Usage u) {
 		this.use = u;
 	}
+	public int getId(){
+		return number;
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
