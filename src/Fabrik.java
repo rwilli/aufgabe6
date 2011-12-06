@@ -49,7 +49,7 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageOperationHoursOfAllandUsage() {
-		Iter<Robot> iter = this.lstRobots.iter();
+		Iter iter = this.lstRobots.iter();
 		int operatingHoursAll = 0;
 		int operatingHoursPainter = 0;
 		int operatingHoursWelder = 0;
@@ -57,7 +57,7 @@ public class Fabrik {
 		int countWelder = 0;
 		
 		while (iter.hasNext()) {
-			Robot r = iter.next();
+			Robot r = (Robot) iter.next();
 			
 			if (r.use instanceof Painter) {
 				operatingHoursPainter += r.operatingHours;
@@ -77,14 +77,14 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageOperationHoursOfType() {
-		Iter<Robot> iter = this.lstRobots.iter();
+		Iter iter = this.lstRobots.iter();
 		int operatingHoursCaterpillaRobot = 0;
 		int operatingHoursSwivelArmRobot = 0;
 		int countCaterpillaRobot = 0;
 		int countSwivelArmRobot = 0;
 		
 		while (iter.hasNext()) {
-			Robot r = iter.next();
+			Robot r = (Robot)iter.next();
 			
 			if (r instanceof CaterpillaRobot) {
 				operatingHoursCaterpillaRobot += r.operatingHours;
@@ -100,7 +100,7 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageRotationsOfSwivelsAndOfAllUsages() {
-		Iter<Robot> iter = this.lstRobots.iter();
+		Iter iter = this.lstRobots.iter();
 		int rotationsAll = 0;
 		int rotationsPainter = 0;
 		int rotationsWelder = 0;
@@ -108,7 +108,7 @@ public class Fabrik {
 		int countWelder = 0;
 		
 		while (iter.hasNext()) {
-			Robot r = iter.next();
+			Robot r =(Robot) iter.next();
 			
 			if (r instanceof SwivelArmRobot) {
 				if (r.use instanceof Painter) {
@@ -132,7 +132,7 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageDistanceOfAllCaterpillarAndUsage() {
-		Iter<Robot> iter = this.lstRobots.iter();
+		Iter iter = this.lstRobots.iter();
 		float distanceAll = 0;
 		float distancePainter = 0;
 		float distanceWelder = 0;
@@ -140,7 +140,7 @@ public class Fabrik {
 		int countWelder = 0;
 		
 		while (iter.hasNext()) {
-			Robot r = iter.next();
+			Robot r = (Robot) iter.next();
 			
 			if (r instanceof CaterpillaRobot) {
 				if (r.use instanceof Painter) {
