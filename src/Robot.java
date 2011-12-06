@@ -48,5 +48,10 @@ public abstract class Robot {
 	
 	protected abstract boolean uncheckedEqual(Robot r);
 	
+	@Override
+	public String toString() {
+		return "Robot:" + number + ", operatingHours=" + operatingHours
+				+ ", use=" + use;
+	}
 	
 }

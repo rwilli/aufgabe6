@@ -9,4 +9,10 @@ public class Painter extends Usage {
 	public float getPaintVolume() {
 		return this.paintVolume;
 	}
+
+	@Override
+	public String toString() {
+		return "Painter:" + paintVolume;
+	}
+	
 }

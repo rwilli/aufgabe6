@@ -1,29 +1,8 @@
 
 public class Fabrik {
-	@Override
-	public String toString() {
-		return "Fabrikname: "+name;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Fabrik other = (Fabrik) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
-	}
-
 	private final String name;
-	private Map lstRobots = new Map();
+	private Map mapRobots = new Map();
+
 	public Fabrik(String name) {
 		this.name = name;
 	}
@@ -33,15 +12,15 @@ public class Fabrik {
 	}
 	
 	public void addRobot(Robot r) {
-		this.lstRobots.add(r.getId(),r);
+		this.mapRobots.add(r.getId(), r);
 	}
 	
 	public void deleteRobot(Robot r) {
-		//this.lstRobots.remove(r);
+		this.mapRobots.removeByKey(r);
 	}
 	
-	public Robot getRobot(int nr) {
-		return null;
+	public Map getRobots() {
+		return this.mapRobots;
 	}
 	
 	public void changeRobotType() {
@@ -49,7 +28,7 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageOperationHoursOfAllandUsage() {
-		Iter iter = this.lstRobots.iter();
+		Iter iter = this.mapRobots.iter();
 		int operatingHoursAll = 0;
 		int operatingHoursPainter = 0;
 		int operatingHoursWelder = 0;
@@ -71,14 +50,14 @@ public class Fabrik {
 		operatingHoursAll = operatingHoursPainter + operatingHoursWelder;
 		
 		//TODO division durch 0 vermeiden
-		System.out.println("OperatingHours All Types: " + (operatingHoursAll/this.lstRobots.size()));
+		System.out.println("OperatingHours All Types: " + (operatingHoursAll/this.mapRobots.size()));
 		System.out.println("OperatingHours Painter: " + (operatingHoursPainter/countPainter));
 		System.out.println("OperatingHours Welder: " + (operatingHoursWelder/countWelder));
 		
 	}
 	
 	public void calculateAverageOperationHoursOfType() {
-		Iter iter = this.lstRobots.iter();
+		Iter iter = this.mapRobots.iter();
 		int operatingHoursCaterpillaRobot = 0;
 		int operatingHoursSwivelArmRobot = 0;
 		int countCaterpillaRobot = 0;
@@ -101,7 +80,7 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageRotationsOfSwivelsAndOfAllUsages() {
-		Iter iter = this.lstRobots.iter();
+		Iter iter = this.mapRobots.iter();
 		int rotationsAll = 0;
 		int rotationsPainter = 0;
 		int rotationsWelder = 0;
@@ -123,7 +102,7 @@ public class Fabrik {
 		}
 		
 		rotationsAll = rotationsPainter + rotationsWelder;
-		System.out.println("Rotations All: " + (rotationsAll/this.lstRobots.size()));
+		System.out.println("Rotations All: " + (rotationsAll/this.mapRobots.size()));
 		System.out.println("Rotations Painter: " + (rotationsPainter/countPainter));
 		System.out.println("Rotations Welder: " + (rotationsWelder/countWelder));
 	}
@@ -133,7 +112,7 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageDistanceOfAllCaterpillarAndUsage() {
-		Iter iter = this.lstRobots.iter();
+		Iter iter = this.mapRobots.iter();
 		float distanceAll = 0;
 		float distancePainter = 0;
 		float distanceWelder = 0;
@@ -155,9 +134,31 @@ public class Fabrik {
 		}
 		
 		distanceAll = distancePainter + distanceWelder;
-		System.out.println("Rotations All: " + (distanceAll/this.lstRobots.size()));
+		System.out.println("Rotations All: " + (distanceAll/this.mapRobots.size()));
 		System.out.println("Rotations Painter: " + (distancePainter/countPainter));
 		System.out.println("Rotations Welder: " + (distanceWelder/countWelder));
+	}
+	
+	@Override
+	public String toString() {
+		return "Fabrikname: "+name;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fabrik other = (Fabrik) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
 	}
 
 }

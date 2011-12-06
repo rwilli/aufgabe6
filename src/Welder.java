@@ -9,5 +9,10 @@ public class Welder extends Usage {
 	public int getTemperature() {
 		return this.temperature;
 	}
+
+	@Override
+	public String toString() {
+		return "Welder:" + temperature;
+	}
 	
 }
