@@ -41,6 +41,8 @@ public class Test {
 
 		mapFabrics.printMap();
 
+		System.out.println(mapFabrics.getValueByKey("4"));
+		
 		
 		//lstFabrics.remove(new Fabrik("3"));
 		
