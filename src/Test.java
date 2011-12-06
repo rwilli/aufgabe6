@@ -181,6 +181,7 @@ public class Test {
 		System.out.println("---Get one robot by key from all robots in the fabric---");
 		System.out.println(temp.getRobots().getValueByKey(1));
 		
+		
 		/*
 		 * remove robot 2 from fabric 1
 		 */
