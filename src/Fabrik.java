@@ -33,7 +33,7 @@ public class Fabrik {
 	}
 	
 	public void addRobot(Robot r) {
-		//this.lstRobots.add(r);
+		this.lstRobots.add(r.getId(),r);
 	}
 	
 	public void deleteRobot(Robot r) {
@@ -70,6 +70,7 @@ public class Fabrik {
 		
 		operatingHoursAll = operatingHoursPainter + operatingHoursWelder;
 		
+		//TODO division durch 0 vermeiden
 		System.out.println("OperatingHours All Types: " + (operatingHoursAll/this.lstRobots.size()));
 		System.out.println("OperatingHours Painter: " + (operatingHoursPainter/countPainter));
 		System.out.println("OperatingHours Welder: " + (operatingHoursWelder/countWelder));
