@@ -24,7 +24,7 @@ public class Fabrik {
 	}
 	
 	public void changeRobotType() {
-		
+		//TODO
 	}
 	
 	public void calculateAverageOperationHoursOfAllandUsage() {
@@ -108,7 +108,7 @@ public class Fabrik {
 	}
 	
 	public void calculateAverageMinAndMaxTempOfAllWelderAndOfAllTypes() {
-		
+		//TODO
 	}
 	
 	public void calculateAverageDistanceOfAllCaterpillarAndUsage() {
