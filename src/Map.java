@@ -24,6 +24,35 @@ public class Map {
 		return false;
 	}
 	
+	
+	public Iter iter(){
+		
+		return values.iter();
+	}
+	public int size(){
+		return keys.size;
+	}
+	
+	public Object getValueByKey(Object k){
+		
+		List.ListIter keyIt = keys.iter();
+		List.ListIter valueIt = values.iter();
+		
+		while(keyIt.hasNext()){
+			
+			Object value = valueIt.next();				
+			Object key  = keyIt.next();
+			
+			if(key.equals(k)){
+				
+				return value;
+			}
+		}
+
+		return null;
+	}
+	
+	
 	public boolean remove(Object k){
 		
 			List.ListIter keyIt = keys.iter();
@@ -97,7 +126,7 @@ public class Map {
 		 * @param element
 		 *            to add.
 		 */
-		public void add(Object element) {
+		protected void add(Object element) {
 			if (first == null) {
 				first = new ListNode(element);
 				last = first;
@@ -115,7 +144,7 @@ public class Map {
 		 * 
 		 * @return a ListNode being the last element.
 		 */
-		private ListNode getLast() {
+		protected ListNode getLast() {
 			ListNode tmp = this.first;
 			while (tmp.next != null) {
 				tmp = tmp.next;
@@ -129,7 +158,7 @@ public class Map {
 		 * 
 		 * @return Iter<T> an iterator.
 		 */
-		public ListIter iter() {
+		protected ListIter iter() {
 			return new ListIter();
 		}
 
@@ -205,7 +234,7 @@ public class Map {
 		 * 
 		 * @return size as integer
 		 */
-		public int size() {
+		protected int size() {
 			return this.size;
 		}
 	}
