@@ -15,16 +15,20 @@ public class Fabrik {
 		this.mapRobots.add(r.getId(), r);
 	}
 	
-	public void deleteRobot(Robot r) {
+	public void deleteRobot(int r) {
 		this.mapRobots.removeByKey(r);
 	}
 	
 	public Map getRobots() {
 		return this.mapRobots;
 	}
+	public Robot getRobotByKey(int key){
+		return (Robot)this.mapRobots.getValueByKey(key);
+	}
 	
-	public void changeRobotType() {
-		//TODO
+	public void changeRobotType(int key, Usage typ) {
+		Robot tmp = (Robot) this.mapRobots.getValueByKey(key);
+		tmp.changeType(typ);
 	}
 	
 	public void calculateAverageOperationHoursOfAllandUsage() {
