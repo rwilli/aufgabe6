@@ -122,17 +122,16 @@ public class Fabrik {
 		operatingHoursAll = operatingHoursPainter + operatingHoursWelder;
 
 		// mapRobots.size() > 0 and countPainter > 0 and countWelder > 0
-		if (this.mapRobots.size() != 0 && countPainter != 0 && countWelder != 0) {
+		if (this.mapRobots.size() != 0)
 			System.out.println("OperatingHours All Types: "
 					+ (operatingHoursAll / this.mapRobots.size()));
+		if (countPainter != 0)
 			System.out.println("OperatingHours Painter: "
 					+ (operatingHoursPainter / countPainter));
+		if (countWelder != 0)
 			System.out.println("OperatingHours Welder: "
 					+ (operatingHoursWelder / countWelder));
 
-		} else {
-			throw new IllegalArgumentException("Divide by 0 error");
-		}
 	}
 
 	/**
@@ -158,13 +157,14 @@ public class Fabrik {
 		}
 
 		// countCaterpillaRobot > 0 and countSwivelArmRobot > 0
-		if (countCaterpillaRobot != 0 && countSwivelArmRobot != 0) {
+
+		if (countCaterpillaRobot != 0) {
 			System.out.println("OperatingHours CaterpillaRobot: "
 					+ (operatingHoursCaterpillaRobot / countCaterpillaRobot));
+		}
+		if (countSwivelArmRobot != 0) {
 			System.out.println("OperatingHours SwivelArmRobot: "
 					+ (operatingHoursSwivelArmRobot / countSwivelArmRobot));
-		} else {
-			throw new IllegalArgumentException("Divide by 0 error");
 		}
 	}
 
@@ -195,16 +195,15 @@ public class Fabrik {
 		}
 
 		rotationsAll = rotationsPainter + rotationsWelder;
-		if (this.mapRobots.size() != 0 && countPainter != 0 && countWelder != 0) {
+		if (this.mapRobots.size() != 0)
 			System.out.println("Rotations All: "
 					+ (rotationsAll / this.mapRobots.size()));
+		if (countPainter != 0)
 			System.out.println("Rotations Painter: "
 					+ (rotationsPainter / countPainter));
+		if (countWelder != 0)
 			System.out.println("Rotations Welder: "
 					+ (rotationsWelder / countWelder));
-		} else {
-			throw new IllegalArgumentException("Divide by 0 error");
-		}
 	}
 
 	// TODO
@@ -226,6 +225,8 @@ public class Fabrik {
 					SwivelArmRobot s = (SwivelArmRobot) r;
 					Welder w = (Welder) s.use;
 
+					if (minTemperatureWelderS == 0)
+						minTemperatureWelderS = w.getTemperature();
 					if (w.getTemperature() > maxTemperatureWelderS)
 						maxTemperatureWelderS = w.getTemperature();
 					if (w.getTemperature() < minTemperatureWelderS)
@@ -238,6 +239,8 @@ public class Fabrik {
 					SwivelArmRobot s = (SwivelArmRobot) r;
 					Welder w = (Welder) s.use;
 
+					if (minTemperatureWelderC == 0)
+						minTemperatureWelderC = w.getTemperature();
 					if (w.getTemperature() > maxTemperatureWelderC)
 						maxTemperatureWelderC = w.getTemperature();
 					if (w.getTemperature() < minTemperatureWelderC)
@@ -304,16 +307,16 @@ public class Fabrik {
 		}
 
 		distanceAll = distancePainter + distanceWelder;
-		if (this.mapRobots.size() != 0 && countPainter != 0 && countWelder != 0) {
+		if (this.mapRobots.size() != 0)
 			System.out.println("Distance All: "
 					+ (distanceAll / this.mapRobots.size()));
+		if (countPainter != 0)
 			System.out.println("Distance Painter: "
 					+ (distancePainter / countPainter));
-			System.out.println("Distance Welder: "
-					+ (distanceWelder / countWelder));
-		} else {
-			throw new IllegalArgumentException("Divide by 0 error");
-		}
+		if (countWelder != 0)
+			;
+		System.out
+				.println("Distance Welder: " + (distanceWelder / countWelder));
 	}
 
 	/*
