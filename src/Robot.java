@@ -24,7 +24,10 @@ public abstract class Robot {
 	 * @param hour
 	 *            operatingHours as integer
 	 */
-	protected Robot(int hour) {
+	protected Robot(int hour) throws IllegalArgumentException {
+		
+		if (hour <= 0) throw new IllegalArgumentException("Value has to be greater than 0");
+		
 		this.number = ++count;
 		this.operatingHours = hour;
 	}
@@ -50,7 +53,8 @@ public abstract class Robot {
 	 * 
 	 * @param u
 	 */
-	public void changeType(Usage u) {
+	public void changeType(Usage u) throws IllegalArgumentException {
+		if (u == null) throw new IllegalArgumentException("Usage type cannot be null");
 		this.use = u;
 	}
 
