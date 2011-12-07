@@ -209,7 +209,7 @@ public class Test {
 		System.out.println();
 		System.out.println("---Calculate all relevant data---");
 		tmp.calculateAverageOperationHoursOfAllandUsage();
-		// tmp.calculateAverageOperationHoursOfType();
+		tmp.calculateAverageOperationHoursOfType();
 		tmp.calculateAverageRotationsOfSwivelsAndOfAllUsages();
 		tmp.calculateAverageMinAndMaxTempOfAllWelderAndOfAllTypes();
 		tmp.calculateAverageDistanceOfAllCaterpillarAndUsage();
