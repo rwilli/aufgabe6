@@ -27,80 +27,80 @@ public class Test {
 		// Fabrik1
 		Fabrik tmp = (Fabrik) mapFabrics.getValueByKey("Fabrik1");
 
-		Robot rb = new CaterpillaRobot(1, 4);
+		Robot rb = new CaterpillaRobot(4);
 		rb.use = new Welder(100);
 
 		tmp.addRobot(rb);
 
-		rb = new CaterpillaRobot(2, 18);
+		rb = new CaterpillaRobot(18);
 		rb.use = new Welder(50);
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(3, 4, 10);
+		rb = new SwivelArmRobot(4, 10);
 		rb.use = new Painter(90);
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(6, 8, 4);
+		rb = new SwivelArmRobot(8, 4);
 		rb.use = new Welder(40);
 		tmp.addRobot(rb);
 
 		// Fabrik2
 		tmp = (Fabrik) mapFabrics.getValueByKey("Fabrik2");
 
-		rb = new CaterpillaRobot(1, 4);
+		rb = new CaterpillaRobot(4);
 		rb.use = new Welder(100);
 
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(2, 18, 16);
+		rb = new SwivelArmRobot(18, 16);
 		rb.use = new Painter(50);
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(3, 4, 10);
+		rb = new SwivelArmRobot(4, 10);
 		rb.use = new Painter(90);
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(6, 8, 4);
+		rb = new SwivelArmRobot(8, 4);
 		rb.use = new Painter(40);
 		tmp.addRobot(rb);
 
 		// Fabrik3
 		tmp = (Fabrik) mapFabrics.getValueByKey("Fabrik3");
 
-		rb = new CaterpillaRobot(1, 4);
+		rb = new CaterpillaRobot(4);
 		rb.use = new Welder(100);
 
 		tmp.addRobot(rb);
 
-		rb = new CaterpillaRobot(2, 18);
+		rb = new CaterpillaRobot(18);
 		rb.use = new Painter(50);
 		tmp.addRobot(rb);
 
-		rb = new CaterpillaRobot(3, 4);
+		rb = new CaterpillaRobot(4);
 		rb.use = new Painter(90);
 		tmp.addRobot(rb);
 
-		rb = new CaterpillaRobot(6, 8);
+		rb = new CaterpillaRobot(8);
 		rb.use = new Welder(40);
 		tmp.addRobot(rb);
 
 		// Fabrik4
 		tmp = (Fabrik) mapFabrics.getValueByKey("Fabrik4");
 
-		rb = new SwivelArmRobot(1, 4, 78);
+		rb = new SwivelArmRobot(4, 78);
 		rb.use = new Welder(100);
 
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(2, 18, 45);
+		rb = new SwivelArmRobot(18, 45);
 		rb.use = new Welder(50);
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(3, 4, 10);
+		rb = new SwivelArmRobot(4, 10);
 		rb.use = new Painter(90);
 		tmp.addRobot(rb);
 
-		rb = new SwivelArmRobot(6, 8, 4);
+		rb = new SwivelArmRobot(8, 4);
 		rb.use = new Welder(40);
 		tmp.addRobot(rb);
 

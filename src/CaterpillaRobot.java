@@ -9,24 +9,18 @@ public class CaterpillaRobot extends Robot {
 
 	/**
 	 * First constructor, calls the super constructors
-	 * 
-	 * @param nr
-	 *            the number of the robot
 	 */
-	public CaterpillaRobot(int nr) {
-		super(nr);
+	public CaterpillaRobot() {
+		super();
 	}
 
 	/**
 	 * Alternative constructor, calls the super constructor
-	 * 
-	 * @param nr
-	 *            the number of the robot
 	 * @param hour
 	 *            the operating hours
 	 */
-	public CaterpillaRobot(int nr, int hour) {
-		super(nr, hour);
+	public CaterpillaRobot(int hour) {
+		super(hour);
 	}
 
 	/**

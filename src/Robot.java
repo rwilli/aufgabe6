@@ -4,30 +4,28 @@
  * @author Gruppe222
  */
 public abstract class Robot {
+	
+	// static variable necessary to create unique robot IDs
+	private static int count = 0;
 	protected final int number;
 	protected int operatingHours;
 	protected Usage use;
 
 	/**
 	 * First constructor
-	 * 
-	 * @param nr
-	 *            number as integer
 	 */
-	protected Robot(int nr) {
-		this.number = nr;
+	protected Robot() {
+		this.number = ++count;
 	}
 
 	/**
 	 * Alternative constructor
 	 * 
-	 * @param nr
-	 *            number as integer
 	 * @param hour
 	 *            operatingHours as integer
 	 */
-	protected Robot(int nr, int hour) {
-		this.number = nr;
+	protected Robot(int hour) {
+		this.number = ++count;
 		this.operatingHours = hour;
 	}
 

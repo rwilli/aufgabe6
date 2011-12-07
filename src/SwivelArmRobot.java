@@ -9,39 +9,32 @@ public class SwivelArmRobot extends Robot {
 
 	/**
 	 * First Constructor, calls the super constructor
-	 * 
-	 * @param nr
-	 *            the number of the robot
 	 */
-	public SwivelArmRobot(int nr) {
-		super(nr);
+	public SwivelArmRobot() {
+		super();
 	}
 
 	/**
 	 * Alternative constructor, calls the super constructor
 	 * 
-	 * @param nr
-	 *            the number of the robot
 	 * @param hour
 	 *            the operating hours
 	 */
-	public SwivelArmRobot(int nr, int hour) {
-		super(nr, hour);
+	public SwivelArmRobot(int hour) {
+		super(hour);
 	}
 
 	/**
 	 * Alternative constructor, calls the super constructor for number and
 	 * hours.
 	 * 
-	 * @param nr
-	 *            the number of the robot
 	 * @param hour
 	 *            the operating hours
 	 * @param rot
 	 *            the rotations as integer
 	 */
-	public SwivelArmRobot(int nr, int hour, int rot) {
-		super(nr, hour);
+	public SwivelArmRobot(int hour, int rot) {
+		super(hour);
 		this.rotations = rot;
 	}
 
