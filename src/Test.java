@@ -211,7 +211,7 @@ public class Test {
 		tmp.calculateAverageOperationHoursOfAllandUsage();
 		tmp.calculateAverageOperationHoursOfType();
 		tmp.calculateAverageRotationsOfSwivelsAndOfAllUsages();
-		tmp.calculateAverageMinAndMaxTempOfAllWelderAndOfAllTypes();
+		tmp.calculateMinAndMaxTempOfAllWelderAndOfAllTypes();
 		tmp.calculateAverageDistanceOfAllCaterpillarAndUsage();
 
 		/*

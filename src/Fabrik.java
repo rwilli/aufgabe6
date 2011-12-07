@@ -192,34 +192,72 @@ public class Fabrik {
 	}
 
 	// TODO
-	public void calculateAverageMinAndMaxTempOfAllWelderAndOfAllTypes() {
+	public void calculateMinAndMaxTempOfAllWelderAndOfAllTypes() {
 
 		Iter iter = this.mapRobots.iter();
-		int maxTemperatureWelder = 0;
-		int minTemperatureWelder = 0;
-		int countWelder = 0;
+		int maxTemperatureWelderS = 0;
+		int minTemperatureWelderS = 0;
+		int maxTemperatureWelderC = 0;
+		int minTemperatureWelderC = 0;		
+		
 
 		while (iter.hasNext()) {
 
 			Robot r = (Robot) iter.next();
-
-			if (r instanceof SwivelArmRobot) {
-
+			if(r instanceof SwivelArmRobot){
+				
 				if (r.use instanceof Welder) {
 
 					SwivelArmRobot s = (SwivelArmRobot) r;
 					Welder w = (Welder) s.use;
 
-					if (w.getTemperature() > maxTemperatureWelder)
-						maxTemperatureWelder = w.getTemperature();
-					if (w.getTemperature() < minTemperatureWelder)
-						minTemperatureWelder = w.getTemperature();
-					countWelder++;
+					if (w.getTemperature() > maxTemperatureWelderS)
+						maxTemperatureWelderS = w.getTemperature();
+					if (w.getTemperature() < minTemperatureWelderS)
+						minTemperatureWelderS = w.getTemperature();
 				}
+			}else if(r instanceof CaterpillaRobot){
+				
+				if (r.use instanceof Welder) {
 
+					SwivelArmRobot s = (SwivelArmRobot) r;
+					Welder w = (Welder) s.use;
+
+					if (w.getTemperature() > maxTemperatureWelderC)
+						maxTemperatureWelderC = w.getTemperature();
+					if (w.getTemperature() < minTemperatureWelderC)
+						minTemperatureWelderC = w.getTemperature();
+				}
+				
+				
 			}
+			
+			
+			
+			
 
 		}
+			if (this.mapRobots.size() != 0 ) {
+				
+				if(minTemperatureWelderS <	minTemperatureWelderC)
+				System.out.println("MinTemp of all Welder: "+ minTemperatureWelderS);
+				else
+					System.out.println("MinTemp of all Welder:: "+ minTemperatureWelderC);
+				if(maxTemperatureWelderS <	maxTemperatureWelderC)
+					System.out.println("MaxTemp of all Welder:: "+ maxTemperatureWelderC);
+				else
+				System.out.println("MaxTemp of all Welder: "+ maxTemperatureWelderS);
+				
+				System.out.println("MinTemp of SwivelArm: " + minTemperatureWelderS);
+				System.out.println("MaxTemp of SwivelArm: " + maxTemperatureWelderS);
+				System.out.println("MinTemp of Caterpilla: " + minTemperatureWelderC);
+				System.out.println("MaxTemp of Caterpilla: " + maxTemperatureWelderC);
+				
+			} else {
+				System.out.println("Divide by 0 error");
+			}
+
+		
 
 		if (this.mapRobots.size() != 0) {
 		} else {
@@ -257,11 +295,11 @@ public class Fabrik {
 
 		distanceAll = distancePainter + distanceWelder;
 		if (this.mapRobots.size() != 0 && countPainter != 0 && countWelder != 0) {
-			System.out.println("Rotations All: "
+			System.out.println("Distance All: "
 					+ (distanceAll / this.mapRobots.size()));
-			System.out.println("Rotations Painter: "
+			System.out.println("Distance Painter: "
 					+ (distancePainter / countPainter));
-			System.out.println("Rotations Welder: "
+			System.out.println("Distance Welder: "
 					+ (distanceWelder / countWelder));
 		} else {
 			System.out.println("Divide by 0 error");
