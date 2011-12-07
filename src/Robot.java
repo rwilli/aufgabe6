@@ -4,7 +4,7 @@
  * @author Gruppe222
  */
 public abstract class Robot {
-	
+
 	// static variable necessary to create unique robot IDs
 	private static int count = 0;
 	protected final int number;
@@ -23,11 +23,16 @@ public abstract class Robot {
 	 * 
 	 * @param hour
 	 *            operatingHours as integer
+	 * @throws IllegalArgumentException
+	 *             if hours is a negative value
 	 */
+	// hours >= 0
 	protected Robot(int hour) throws IllegalArgumentException {
-		
-		if (hour <= 0) throw new IllegalArgumentException("Value has to be greater than 0");
-		
+
+		if (hour < 0)
+			throw new IllegalArgumentException(
+					"Value has to be greater than or 0.");
+
 		this.number = ++count;
 		this.operatingHours = hour;
 	}
@@ -52,9 +57,13 @@ public abstract class Robot {
 	 * Changes the usage type of the robot
 	 * 
 	 * @param u
+	 *            new usage type
+	 * @throws IllegalArgumentException
+	 *             if u is null
 	 */
 	public void changeType(Usage u) throws IllegalArgumentException {
-		if (u == null) throw new IllegalArgumentException("Usage type cannot be null");
+		if (u == null)
+			throw new IllegalArgumentException("Usage type cannot be null");
 		this.use = u;
 	}
 

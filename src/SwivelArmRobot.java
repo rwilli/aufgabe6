@@ -32,9 +32,16 @@ public class SwivelArmRobot extends Robot {
 	 *            the operating hours
 	 * @param rot
 	 *            the rotations as integer
+	 * @throws IllegalArgumentException
+	 *             if either of the values is < 0
 	 */
-	public SwivelArmRobot(int hour, int rot) {
+	// hour >= 0
+	// rot >= 0
+	public SwivelArmRobot(int hour, int rot) throws IllegalArgumentException {
 		super(hour);
+		if (rot < 0)
+			throw new IllegalArgumentException(
+					"Value has to be greater than or 0.");
 		this.rotations = rot;
 	}
 

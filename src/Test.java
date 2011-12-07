@@ -270,9 +270,17 @@ public class Test {
 		System.out.println();
 		System.out.println("---Change from Fabrik1 Roboter1«s typ---");
 		Fabrik fabric1 = (Fabrik) mapFabrics.getValueByKey("Fabrik1");
-		System.out.println("Robot before change : " + fabric1.getRobotByKey(1));
-		fabric1.changeRobotType(1, new Painter(20));
-		System.out.println("Robot after change : " + fabric1.getRobotByKey(1));
+
+		try {
+			System.out.println("Robot before change : "
+					+ fabric1.getRobotByKey(1));
+			fabric1.changeRobotType(1, new Painter(20));
+			System.out.println("Robot after change : "
+					+ fabric1.getRobotByKey(1));
+			
+		} catch (InvalidKeyException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -32,7 +32,10 @@ public class Fabrik {
 	 * @param r
 	 *            the robot to add
 	 */
-	public void addRobot(Robot r) {
+	public void addRobot(Robot r) throws IllegalArgumentException {
+		if (r == null)
+			throw new IllegalArgumentException(
+					"null cannot be added to the map");
 		this.mapRobots.add(r.getId(), r);
 	}
 
@@ -42,7 +45,10 @@ public class Fabrik {
 	 * @param r
 	 *            the robot to delete
 	 */
-	public void deleteRobot(int r) {
+	public void deleteRobot(int r) throws IllegalArgumentException {
+		if (r < 0)
+			throw new IllegalArgumentException(
+					"Key has to be greater than or 0.");
 		this.mapRobots.removeByKey(r);
 	}
 
@@ -61,9 +67,15 @@ public class Fabrik {
 	 * @param key
 	 *            as integer
 	 * @return a robot
+	 * @throws InvalidKeyException
+	 *             if the key does not exist
 	 */
-	public Robot getRobotByKey(int key) {
-		return (Robot) this.mapRobots.getValueByKey(key);
+	public Robot getRobotByKey(int key) throws InvalidKeyException {
+		Robot r = (Robot) this.mapRobots.getValueByKey(key);
+		if (r == null) {
+			throw new InvalidKeyException(key);
+		}
+		return r;
 	}
 
 	/**
@@ -73,9 +85,13 @@ public class Fabrik {
 	 *            the key in the map as integer
 	 * @param typ
 	 *            the new type
+	 * @throws InvalidKeyException
+	 *             if the key does not exist
 	 */
-	public void changeRobotType(int key, Usage typ) {
+	public void changeRobotType(int key, Usage typ) throws InvalidKeyException {
 		Robot tmp = (Robot) this.mapRobots.getValueByKey(key);
+		if (tmp == null)
+			throw new InvalidKeyException(key);
 		tmp.changeType(typ);
 	}
 
@@ -115,7 +131,7 @@ public class Fabrik {
 					+ (operatingHoursWelder / countWelder));
 
 		} else {
-			System.out.println("Divide by 0 error.");
+			throw new IllegalArgumentException("Divide by 0 error");
 		}
 	}
 
@@ -148,7 +164,7 @@ public class Fabrik {
 			System.out.println("OperatingHours SwivelArmRobot: "
 					+ (operatingHoursSwivelArmRobot / countSwivelArmRobot));
 		} else {
-			System.out.println("Divide by 0 error.");
+			throw new IllegalArgumentException("Divide by 0 error");
 		}
 	}
 
@@ -187,7 +203,7 @@ public class Fabrik {
 			System.out.println("Rotations Welder: "
 					+ (rotationsWelder / countWelder));
 		} else {
-			System.out.println("Divide by 0 error.");
+			throw new IllegalArgumentException("Divide by 0 error");
 		}
 	}
 
@@ -198,14 +214,13 @@ public class Fabrik {
 		int maxTemperatureWelderS = 0;
 		int minTemperatureWelderS = 0;
 		int maxTemperatureWelderC = 0;
-		int minTemperatureWelderC = 0;		
-		
+		int minTemperatureWelderC = 0;
 
 		while (iter.hasNext()) {
 
 			Robot r = (Robot) iter.next();
-			if(r instanceof SwivelArmRobot){
-				
+			if (r instanceof SwivelArmRobot) {
+
 				if (r.use instanceof Welder) {
 
 					SwivelArmRobot s = (SwivelArmRobot) r;
@@ -216,8 +231,8 @@ public class Fabrik {
 					if (w.getTemperature() < minTemperatureWelderS)
 						minTemperatureWelderS = w.getTemperature();
 				}
-			}else if(r instanceof CaterpillaRobot){
-				
+			} else if (r instanceof CaterpillaRobot) {
+
 				if (r.use instanceof Welder) {
 
 					SwivelArmRobot s = (SwivelArmRobot) r;
@@ -228,42 +243,37 @@ public class Fabrik {
 					if (w.getTemperature() < minTemperatureWelderC)
 						minTemperatureWelderC = w.getTemperature();
 				}
-				
-				
+
 			}
-			
-			
-			
-			
 
 		}
-			if (this.mapRobots.size() != 0 ) {
-				
-				if(minTemperatureWelderS <	minTemperatureWelderC)
-				System.out.println("MinTemp of all Welder: "+ minTemperatureWelderS);
-				else
-					System.out.println("MinTemp of all Welder:: "+ minTemperatureWelderC);
-				if(maxTemperatureWelderS <	maxTemperatureWelderC)
-					System.out.println("MaxTemp of all Welder:: "+ maxTemperatureWelderC);
-				else
-				System.out.println("MaxTemp of all Welder: "+ maxTemperatureWelderS);
-				
-				System.out.println("MinTemp of SwivelArm: " + minTemperatureWelderS);
-				System.out.println("MaxTemp of SwivelArm: " + maxTemperatureWelderS);
-				System.out.println("MinTemp of Caterpilla: " + minTemperatureWelderC);
-				System.out.println("MaxTemp of Caterpilla: " + maxTemperatureWelderC);
-				
-			} else {
-				System.out.println("Divide by 0 error");
-			}
-
-		
-
 		if (this.mapRobots.size() != 0) {
-		} else {
-			System.out.println("Divide by 0 error.");
-		}
 
+			if (minTemperatureWelderS < minTemperatureWelderC)
+				System.out.println("MinTemp of all Welder: "
+						+ minTemperatureWelderS);
+			else
+				System.out.println("MinTemp of all Welder:: "
+						+ minTemperatureWelderC);
+			if (maxTemperatureWelderS < maxTemperatureWelderC)
+				System.out.println("MaxTemp of all Welder:: "
+						+ maxTemperatureWelderC);
+			else
+				System.out.println("MaxTemp of all Welder: "
+						+ maxTemperatureWelderS);
+
+			System.out
+					.println("MinTemp of SwivelArm: " + minTemperatureWelderS);
+			System.out
+					.println("MaxTemp of SwivelArm: " + maxTemperatureWelderS);
+			System.out.println("MinTemp of Caterpilla: "
+					+ minTemperatureWelderC);
+			System.out.println("MaxTemp of Caterpilla: "
+					+ maxTemperatureWelderC);
+
+		} else {
+			throw new IllegalArgumentException("Divide by 0 error");
+		}
 	}
 
 	/**
@@ -302,7 +312,7 @@ public class Fabrik {
 			System.out.println("Distance Welder: "
 					+ (distanceWelder / countWelder));
 		} else {
-			System.out.println("Divide by 0 error");
+			throw new IllegalArgumentException("Divide by 0 error");
 		}
 	}
 

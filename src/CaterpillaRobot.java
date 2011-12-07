@@ -16,9 +16,11 @@ public class CaterpillaRobot extends Robot {
 
 	/**
 	 * Alternative constructor, calls the super constructor
+	 * 
 	 * @param hour
 	 *            the operating hours
 	 */
+	// hour >= 0
 	public CaterpillaRobot(int hour) {
 		super(hour);
 	}
