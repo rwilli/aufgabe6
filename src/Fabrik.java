@@ -194,34 +194,38 @@ public class Fabrik {
 	// TODO
 	public void calculateAverageMinAndMaxTempOfAllWelderAndOfAllTypes() {
 
-		
-		  Iter iter = this.mapRobots.iter();
-		  int temperatureWelder = 0; 
-		  int countWelder = 0;
-		  
-		  while (iter.hasNext()) {
-		  
-		  Robot r = (Robot) iter.next();
-		  
-		  	if (r instanceof SwivelArmRobot) { 
-		  		
-		  		if (r.use instanceof Welder) {
-		 
-		  			SwivelArmRobot s = (SwivelArmRobot) r;
-		  			Welder w = (Welder) s.use;
-		  			temperatureWelder += w.getTemperature();
-		  			countWelder++; 
-			  } 
-		  	
-		  	}
-		  
-		  }
-		  
-		  
-		  
-		  if (this.mapRobots.size() != 0) { } else {
-		  System.out.println("Divide by 0 error."); }
-		 
+		Iter iter = this.mapRobots.iter();
+		int maxTemperatureWelder = 0;
+		int minTemperatureWelder = 0;
+		int countWelder = 0;
+
+		while (iter.hasNext()) {
+
+			Robot r = (Robot) iter.next();
+
+			if (r instanceof SwivelArmRobot) {
+
+				if (r.use instanceof Welder) {
+
+					SwivelArmRobot s = (SwivelArmRobot) r;
+					Welder w = (Welder) s.use;
+
+					if (w.getTemperature() > maxTemperatureWelder)
+						maxTemperatureWelder = w.getTemperature();
+					if (w.getTemperature() < minTemperatureWelder)
+						minTemperatureWelder = w.getTemperature();
+					countWelder++;
+				}
+
+			}
+
+		}
+
+		if (this.mapRobots.size() != 0) {
+		} else {
+			System.out.println("Divide by 0 error.");
+		}
+
 	}
 
 	/**
